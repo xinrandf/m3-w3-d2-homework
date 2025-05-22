@@ -1,0 +1,60 @@
+@import 'colors';
+
+// Mixin for flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Global
+* {
+    color: $green-dark;
+    font-size: 1.2rem;
+}
+
+.container {
+    background-color: $yellow;
+    border: 1px solid #000;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+
+    .left {
+        background-color: $green-light;
+        height: 100%;
+        width: 69%;
+        position: relative;
+        @include flex-center;
+    }
+
+    .right {
+        background-color: $lime;
+        height: 100%;
+        position: relative;
+        width: 29%;
+        @include flex-center;
+
+        .button {
+            background-color: $green-dark;
+            color: $white;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 7em;
+            height: 2.5em;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.5em 2em;
+            //this is to center content vertically
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -120%);
+            @include flex-center;
+        }
+    }
+}
